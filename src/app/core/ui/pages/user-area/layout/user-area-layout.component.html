@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row  {{sidebarState}}">
+        <div [class]="getSidebarDirection()" id="app-sidebar">
+            <app-user-area-sidebar></app-user-area-sidebar>
+        </div>
+        <main id="app-main" [class]="getMainDirection()" role="main">
+            <div class="navbar pl-0 pr-0 app-header" >
+                <app-user-area-header></app-user-area-header>
+            </div>
+            <div class="app-content">
+                <ng-content></ng-content>
+            </div>
+            <div class="app-footer">
+                <app-user-area-footer></app-user-area-footer>
+            </div>
+        </main>
+    </div>
+</div>

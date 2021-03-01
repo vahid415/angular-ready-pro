@@ -1,0 +1,40 @@
+.compacted app-user-area-sidebar app-menu > .menu-items > .menu-item {
+  text-align: center;
+  a span,
+  a .expand-state,
+  .expanded {
+    display: none;
+  }
+  li {
+    padding: 10px !important;
+  }
+}
+.expanded .menu-item a .menu-title {
+  padding-left: 16px;
+}
+
+.compacted app-user-area-sidebar app-menu > .menu-items {
+  padding-left: 0 !important;
+}
+#app-sidebar {
+  z-index: 1 !important;
+}
+* {
+  z-index: 0;
+}
+.expanded .tooltip {
+  display: none !important;
+}
+.sidebar-ltr .menu-items {
+  padding-left: 5px;
+}
+
+.sidebar-rtl > app-user-area-sidebar > app-menu > .menu-items {
+  direction: rtl;
+  padding: 0;
+  text-align: right;
+}
+app-menu > .menu-items {
+  padding: 5px !important;
+  margin: 0;
+}

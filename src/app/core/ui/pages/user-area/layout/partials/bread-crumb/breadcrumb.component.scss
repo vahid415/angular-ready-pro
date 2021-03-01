@@ -1,0 +1,38 @@
+.app-bread-crumb {
+  color: rgb(2, 184, 117);
+  padding: 5px;
+  ol{
+    margin-bottom: 0;
+  }
+}
+
+.link-item {
+  color: initial;
+  cursor: pointer;
+  color: rgb(2, 184, 117);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.static-item {
+  font-size: 18px;
+  color: #4b4b4b !important;
+  text-decoration: none;
+}
+
+.home-link {
+  color: rgb(2, 184, 117);
+}
+
+.home-link:hover,
+.link-item:hover {
+  color: rgb(2, 112, 72);
+  text-decoration: none;
+}
+
+.d-flex {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}

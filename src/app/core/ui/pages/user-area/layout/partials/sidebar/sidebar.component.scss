@@ -1,0 +1,17 @@
+.r-sidebar {
+  z-index: 1000;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgb(40, 66, 85);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  .menu-items {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}

@@ -1,0 +1,45 @@
+.user {
+  width: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.userName {
+  color: white;
+  text-align: center;
+  display: block;
+}
+.header-fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 16.666666%;
+  z-index: 1030;
+}
+.user-menu-dropdown,
+.lang-dropdown {
+  background-color: rgb(75, 96, 112);
+}
+
+div[dir='rtl'] > .user-menu-dropdown,
+div[dir='rtl'] > .lang-dropdown {
+  right: auto;
+  left: 0;
+  width: 200px;
+}
+div[dir='ltr'] > .user-menu-dropdown,
+div[dir='ltr'] > .lang-dropdown {
+  right: 0;
+  left: auto;
+  width: 200px;
+
+  app-menu > .menu-items {
+    padding-left: 5 !important;
+  }
+}
+
+.app-breadcrumb {
+  padding: 5px 0 5px 0;
+  border-top: 1px solid rgb(245, 247, 249);
+  background-color: rgb(245, 247, 249);
+  box-shadow: 0 10px 15px -10px;
+}

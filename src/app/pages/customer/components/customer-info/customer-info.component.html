@@ -1,0 +1,31 @@
+<app-card title="Customer page">
+    <form [formGroup]="form">
+        <app-row>
+            <app-column md=3>
+                <app-form-control label="firstName">
+                    <input appTextBox formControlName="fName">
+                </app-form-control>
+            </app-column>
+            <app-column md=6>
+                <app-form-control label="lastName">
+                    <textarea appTextArea formControlName="lName">
+                    </textarea>
+                </app-form-control>
+            </app-column>
+        </app-row>
+
+    </form>
+    <footer appFooter>
+        <app-button-group>
+            <button appButton color='success' i18n (click)="testServiceCall()"
+                    [disabled]="form.invalid">forward</button>
+            <button appButton color='danger' i18n (click)="back()">back</button>
+            <button appButton color='info' i18n (click)="back()">info</button>
+            <button appButton color='warning' i18n (click)="back()">warning</button>
+            <button appButton color='light' i18n (click)="back()">light</button>
+            <button appButton color='primary' i18n (click)="back()">primary</button>
+            <button appButton color='secondary' i18n (click)="back()">secondary</button>
+        </app-button-group>
+        <button appButton color='dark' size='large' i18n (click)="back()">dark</button>
+    </footer>
+</app-card>

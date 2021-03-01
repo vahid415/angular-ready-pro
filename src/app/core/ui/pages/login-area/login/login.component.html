@@ -1,0 +1,30 @@
+<div id="formContent">
+    <!-- Login Form -->
+    <form [formGroup]="form">
+        <div class="card-body">
+            <div class="card-body">
+                <app-row>
+                    <app-column md=12>
+                        <app-form-control>
+                            <input appTextBox formControlName="userName" placeholder="userName">
+                        </app-form-control>
+                    </app-column>
+                    <app-column md=12>
+                        <app-form-control>
+                            <input appTextBox formControlName="password" placeholder="password">
+                        </app-form-control>
+                    </app-column>
+                </app-row>
+            </div>
+            <button appButton type="submit" class="fadeIn fourth" (click)="onFormSubmit()">LOG IN
+            </button>
+        </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+        <a class="underlineHover" routerLink="sign-up">Don’t have an account? Sign up</a>
+        <a class="underlineHover" routerLink="forgot-password">Forgot Password?</a>
+    </div>
+
+</div>

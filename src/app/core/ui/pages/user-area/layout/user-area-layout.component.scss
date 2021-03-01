@@ -1,0 +1,90 @@
+.app-content {
+  background-color: rgb(235, 239, 243);
+  min-height: calc(100vh - 66px);
+  padding-top: 7rem;
+}
+#app-sidebar {
+  position: fixed;
+  height: 100%;
+}
+.sidebar-rtl {
+  max-width: 100%;
+  flex: 0 0 calc(100% - 16rem);
+  right: 0;
+  .app-header {
+    right: 16rem;
+    left: 0rem;
+  }
+}
+
+.compacted {
+  #app-sidebar {
+    width: 3.5rem !important;
+    .tooltip {
+      display: inherit !important;
+    }
+  }
+  .main-ltr {
+    width: calc(100% - 3.5rem) !important;
+    max-width: 100%;
+    flex: 0 0 calc(100% - 3.5rem);
+    margin-left: 3.5rem;
+    .app-header {
+      left: 3.5rem;
+    }
+  }
+  .main-rtl {
+    width: calc(100% - 3.5rem) !important;
+    max-width: 100%;
+    flex: 0 0 calc(100% - 3.5rem);
+    margin-right: 3.5rem;
+    .app-header {
+      right: 3.5rem;
+      left: 0;
+    }
+  }
+}
+.expanded {
+  #app-sidebar {
+    width: 16rem;
+    position: fixed;
+    height: 100vh;
+  }
+  .main-ltr {
+    width: calc(100% - 16rem);
+    margin-left: 16rem;
+    .app-header {
+      left: 16rem;
+    }
+  }
+  .main-rtl {
+    width: calc(100% - 16rem) !important;
+    max-width: 100%;
+    flex: 0 0 calc(100% - 16rem);
+    margin-right: 16rem;
+    .app-header {
+      right: 16rem;
+      left: 0rem;
+    }
+  }
+}
+.app-header {
+  height: 6rem;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  display: inherit;
+  padding: 0;
+  right: 0;
+  z-index: 1;
+}
+
+@keyframes fadeSlideGrowKeyframe {
+  30% {
+    transform: opacity(1);
+    left: 16.66%;
+  }
+  100% {
+    transform: scale(1);
+    left: 16.66%;
+  }
+}

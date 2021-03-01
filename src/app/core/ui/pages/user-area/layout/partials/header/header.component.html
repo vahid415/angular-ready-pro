@@ -1,0 +1,27 @@
+<nav class="">
+    <div class="container-fluid p-2">
+        <a class="navbar-brand m-0" role="button"><i class="text-dark fa fa-bars fa-lg" title="toggle"
+               (click)="toggleMenu()"></i></a>
+        <a class="navbar-brand text-dark" role="button" i18n>Ticketing</a>
+        <div class="d-flex">
+            <div ngbDropdown class="mr-3" [dir]="getUserMenuPlacement()">
+                <button class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>lang</button>
+                <div class="lang-dropdown" ngbDropdownMenu aria-labelledby="dropdownConfig">
+                    <app-menu tag="header-lang-context-menu" [items]="languageMenu"></app-menu>
+                </div>
+            </div>
+            <div ngbDropdown [dir]="getUserMenuPlacement()">
+                <img src="assets/img/user.png" alt="user" class="user" ngbDropdownToggle>
+                <div class="user-menu-dropdown" ngbDropdownMenu>
+                    <span class="userName">
+                        {{userFullName}}
+                    </span>
+                    <app-menu tag="user-header-context-menu" [items]="userMenu"></app-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="app-breadcrumb">
+        <app-user-area-breadcrumb></app-user-area-breadcrumb>
+    </div>
+</nav>

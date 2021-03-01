@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  margin: 5px;
+}
+:host-context(.rtl) {
+  .card-footer {
+    text-align: right;
+    direction: rtl;
+  }
+}

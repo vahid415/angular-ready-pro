@@ -1,0 +1,19 @@
+<div id="formContent">
+    <!-- Login Form -->
+    <form [formGroup]="form">
+        <div class="card-body">
+            <input appTextBox id="login" class="fadeIn second" formControlName="userName" placeholder="userName">
+            <input appTextBox id="email" class="fadeIn second" formControlName="email" placeholder="email">
+            <input appTextBox id="password" class="fadeIn third" formControlName="password" placeholder="password">
+            <input appTextBox id="confirmPassword" class="fadeIn third" formControlName="confirmPassword"
+                placeholder="confirmPassword">
+            <input type="submit" class="fadeIn fourth" value="Register" (click)="onFormSubmit()">
+        </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+        <a class="underlineHover" routerLink="..">Back To Login</a>
+    </div>
+
+</div>

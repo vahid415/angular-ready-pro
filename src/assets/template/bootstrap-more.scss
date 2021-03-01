@@ -1,0 +1,112 @@
+/*
+  The following styles are downloaded from internet to enable using new classes based on bootstrap's variables.
+   For example, $green-200 variable is added based on $green variable and then classes like bg-green-200 are added to be used in our code.
+   In Wina, we should mostly use these classes instead of using our own colors.
+   Currently, in http://10.33.0.13:8050/colors/ you can see the color palette and all possible classes visually.
+   Otherwise you can search 'Bootstrap 4 Color Palette Generator' on net to see the possible classes and their effect on appearance.
+*/
+@import '~bootstrap-v4-rtl/scss/bootstrap-rtl';
+$color-variants: (
+  100:  -10%,
+  200:  -25%,
+  300:  -50%,
+  400:  -75%,
+  500:  100%,
+  600:   75%,
+  700:   50%,
+  800:   25%,
+  900:   15%
+);
+
+//  Add color variants to $colors
+@each $color-name, $color in $colors {
+  @each $variant-name, $percent in $color-variants {
+    $mix-color: if($percent < 0%, white, black);
+    $colors: map-merge($colors, ($color-name+'-'+$variant-name: mix($color, $mix-color, abs($percent))));
+  }
+}
+
+$enable-hover-media-query: true;
+
+/* Bootstrap 4 mixins - no change */
+
+@mixin hover {
+  &:hover { @content; }
+}
+
+@mixin hover-focus {
+  @if $enable-hover-media-query {
+    &:focus {
+      @content;
+    }
+    @include hover { @content; }
+  } @else {
+    &:focus,
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      color: darken($color, 10%) !important;
+    }
+  }
+}
+
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent} {
+    @include hover-focus {
+      background-color: darken($color, 10%) !important;
+    }
+  }
+}
+
+// Color contrast - from Bootstrap 4 utilities - no change
+@function color-yiq($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @if ($yiq >= 150) {
+    @return #111;
+  } @else {
+    @return #fff;
+  }
+}
+
+/* from Bootstrap 4 utilities - replaced $theme-colors with $colors */
+
+// text colors
+@each $color, $value in $colors {
+  @include text-emphasis-variant(".text-#{$color}", $value);
+}
+
+// background colors
+@each $color, $value in $colors {
+  @include bg-variant(".bg-#{$color}", $value);
+}
+
+// background text contrast
+@each $color, $value in $colors {
+  .bg-#{$color} {
+    color: color-yiq($value);
+  }
+}
+
+// border colors
+@each $color, $value in $colors {
+  .border-#{$color} {
+    border-color: $value !important;
+  }
+}

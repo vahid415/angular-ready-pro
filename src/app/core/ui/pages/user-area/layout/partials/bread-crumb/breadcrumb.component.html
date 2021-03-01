@@ -1,0 +1,17 @@
+<div class="app-bread-crumb">
+  <ol class="d-flex pl-2">
+    <li class="pr-1">
+      <a [routerLink]="['dashboard']"> <i class="fa fa-home home-link" ></i> </a>
+    </li>
+
+    <ng-container *ngFor="let item of getBreadcrumbItems()">
+      <li class="pr-1"><i [class]="getBreadcrumbIcon()"></i></li>
+      <li class="pr-2">
+        <a *ngIf="item.path; else elseBlock" (click)="onItemClick(item)" class="link-item" i18n>{{item[breadcrumbItemTextSymbol]}}</a>
+        <ng-template #elseBlock>
+          <a class="static-item" i18n>{{item[breadcrumbItemTextSymbol]}}</a>
+        </ng-template>
+      </li>
+    </ng-container>
+  </ol>
+</div>
