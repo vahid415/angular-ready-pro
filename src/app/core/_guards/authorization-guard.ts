@@ -43,10 +43,12 @@ export class AuthorizationGuard implements CanActivate, CanActivateChild {
             if (this.shouldRedirectToChangePasswordPage(user, route)) {
                 this.navService.goToSetPasswordPage();
                 return false;
-            } if (this.shouldRedirectToDashboardPage(user, route)) {
+            } 
+            if (this.shouldRedirectToDashboardPage(user, route)) {
                 this.navService.goToDashboardPage();
                 return false;
-            } if (!this.hasUserPermissionToViewPage(user, route)) {
+            } 
+            if (!this.hasUserPermissionToViewPage(user, route)) {
                 //   TODO:
                 // console.log('you have no permission to access to this route:', route);
                 return false;
@@ -78,7 +80,6 @@ export class AuthorizationGuard implements CanActivate, CanActivateChild {
     private hasUserPermissionToViewPage(user: UserIdentity, route: ActivatedRouteSnapshot): boolean {
         let currentState = route;
         do {
-            // eslint-disable-next-line prefer-destructuring
             const data: NgRouteData = currentState.data;
             const perm = data.permission;
             if (typeof perm === 'string' || Array.isArray(perm)) {
@@ -86,7 +87,6 @@ export class AuthorizationGuard implements CanActivate, CanActivateChild {
                     return false;
                 }
             }
-            // eslint-disable-next-line prefer-destructuring
             currentState = currentState.children[0];
         } while (currentState);
         return true;
