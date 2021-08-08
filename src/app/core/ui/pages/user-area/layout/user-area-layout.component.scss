@@ -6,6 +6,25 @@
 #app-sidebar {
   position: fixed;
   height: 100%;
+  transition: all 1s ease;
+}
+#app-main {
+  max-width: 100%;
+  position: absolute;
+  transition: all 1s ease;
+  #app-header {
+    transition: all 1s ease;
+    height: 60px;
+    background-color: $back-color-white;
+    position: fixed;
+    display: inherit;
+    z-index: 1;
+  }
+  #app-content {
+    background-color: $back-color-lightsteelblue;
+    min-height: calc(100vh - 60px);
+    padding-top: 60px;
+  }
 }
 .sidebar-rtl {
   max-width: 100%;
